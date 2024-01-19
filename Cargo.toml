@@ -1,0 +1,21 @@
+[workspace]
+members = ["src/common", "src/client"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+
+[workspace.dependencies]
+tokio = { version = "1.35.1", features = ["all"] }
+async-trait = { version = "0.1.77" }
+serde = { version = "1.0.194", features = ["derive"] }
+thiserror = { version = "1.0.56" }
+anyhow = { version = "1.0.79", features = ["backtrace"] }
+chrono = { version = "0.4.31" }
+chrono-tz = { version = "0.8.5" }
+rickhouse_common = { path = "src/common" }
+
+[profile.release]
+debug = true
