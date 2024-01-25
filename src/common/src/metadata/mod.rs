@@ -1,3 +1,3 @@
 mod column;
 mod data_type;
-mod util;
+mod type_util;
