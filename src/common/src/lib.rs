@@ -1,6 +1,9 @@
-pub mod error;
+mod error;
 pub mod metadata;
-pub mod value;
+pub mod values;
+
+pub use error::Error;
+pub use error::Result;
 
 pub fn add(left: usize, right: usize) -> usize {
 	left + right

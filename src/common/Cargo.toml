@@ -11,3 +11,14 @@ anyhow.workspace = true
 async-trait.workspace = true
 chrono.workspace = true
 chrono-tz.workspace = true
+
+uuid = { workspace = true, optional = true }
+num-bigint = { workspace = true, optional = true }
+rust_decimal = { workspace = true, optional = true }
+serde_json = { workspace = true, optional = true }
+
+[features]
+default = ["bigint", "json", "decimal", "uuid"]
+json = ["dep:serde_json"]
+bigint = ["dep:num-bigint"]
+decimal = ["dep:rust_decimal"]

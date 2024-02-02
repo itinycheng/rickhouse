@@ -8,7 +8,7 @@ use super::type_util::parse_enum;
 use super::type_util::parse_map;
 use super::type_util::parse_tuple;
 
-/// data type.
+/// data types.
 #[derive(Debug, Clone, Hash, PartialEq, Eq)]
 pub enum DataType {
 	Bool,
@@ -50,6 +50,12 @@ pub enum DataType {
 	Array(Box<DataType>),
 	Map(Box<DataType>, Box<DataType>),
 	Nullable(Box<DataType>),
+}
+
+impl DataType {
+	pub fn is_nullable(&self) -> bool {
+		matches!(self, DataType::Nullable(_))
+	}
 }
 
 impl FromStr for DataType {
