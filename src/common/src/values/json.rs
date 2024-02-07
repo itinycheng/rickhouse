@@ -1,5 +1,9 @@
+use serde::Deserialize;
+use serde::Serialize;
+
 use crate::Result;
 
+#[derive(Serialize, Deserialize, Hash, PartialEq, Eq)]
 pub struct Json(pub Vec<u8>);
 
 impl Json {

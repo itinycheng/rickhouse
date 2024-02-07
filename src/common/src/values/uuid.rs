@@ -1,3 +1,7 @@
+use serde::Deserialize;
+use serde::Serialize;
+
+#[derive(Serialize, Deserialize, Hash, PartialEq, Eq)]
 pub struct Uuid(pub [u8; 16]);
 
 impl Uuid {

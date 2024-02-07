@@ -1,5 +1,6 @@
 macro_rules! impl_ip {
 	($name: ident, $d_ty: ty, $ip_ty: ty) => {
+		#[derive(::serde::Serialize, ::serde::Deserialize, Hash, PartialEq, Eq)]
 		pub struct $name(pub $d_ty);
 
 		impl $name {

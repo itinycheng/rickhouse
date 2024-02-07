@@ -1,5 +1,9 @@
 use crate::Result;
 use rust_decimal::Decimal as RustDecimal;
+use serde::Deserialize;
+use serde::Serialize;
+
+#[derive(Serialize, Deserialize, Hash, PartialEq, Eq)]
 pub enum Decimal {
 	I32([u8; 4]),
 	I64([u8; 8]),

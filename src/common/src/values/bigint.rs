@@ -2,6 +2,7 @@
 
 macro_rules! impl_num_256 {
 	($name: ident, $to_ty: ty, $to_fn: ident) => {
+		#[derive(::serde::Serialize, ::serde::Deserialize, Hash, PartialEq, Eq)]
 		pub struct $name(pub [u8; 32]);
 
 		impl $name {

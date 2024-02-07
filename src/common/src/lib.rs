@@ -1,5 +1,8 @@
+#![allow(dead_code)]
+
 mod error;
 pub mod metadata;
+mod serde;
 pub mod values;
 
 pub use error::Error;
